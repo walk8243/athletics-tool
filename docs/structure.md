@@ -1,3 +1,3 @@
 # 構成図
 
-![全体構成図](overall-structure-diagram.jpg)
+![全体構成図](overall-structure-diagram.drawio.png)
