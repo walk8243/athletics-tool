@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  db:
+    container_name: athletics.db
+    build: ./db
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      MARIADB_ROOT_PASSWORD: 8uqASU2q36dP
+      MARIADB_DATABASE: athletics
+      MARIADB_USER: user
+      MARIADB_PASSWORD: f85kt4HR
