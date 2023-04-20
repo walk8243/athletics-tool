@@ -1,13 +1,19 @@
 version: "3.9"
 services:
   db:
-    container_name: athletics.db
+    container_name: athletics-tool.db
     build: ./db
     restart: always
     ports:
       - "3306:3306"
     environment:
       MARIADB_ROOT_PASSWORD: 8uqASU2q36dP
-      MARIADB_DATABASE: athletics
+      MARIADB_DATABASE: athletics-tool
       MARIADB_USER: user
       MARIADB_PASSWORD: f85kt4HR
+  repository-api:
+    container_name: athletics-tool.repository-api
+    build: ./repository-api
+    restart: always
+    ports:
+      - "8082:8080"
