@@ -23,12 +23,24 @@ services:
     restart: always
     ports:
       - "8080:8080"
+  tool-frontend:
+    container_name: athletics-tool.tool-frontend
+    build: ./tool-frontend
+    restart: always
+    ports:
+      - "3000:3000"
   web-api:
     container_name: athletics-tool.web-api
     build: ./web-api
     restart: always
     ports:
       - "8081:8080"
+  web-frontend:
+    container_name: athletics-tool.web-frontend
+    build: ./web-frontend
+    restart: always
+    ports:
+      - "3001:3000"
   tool-exporter:
     container_name: athletics-tool.tool-exporter
     build: ./tool-exporter
