@@ -10,6 +10,19 @@
 $ docker-compose up --build
 ```
 
+### アプリケーションへアクセス
+
+- tool-frontend
+- tool-api
+	- http://localhost:8080/actuator/health
+- repository-api
+	- http://localhost:8082/actuator/health
+- web-frontend
+- web-api
+	- http://localhost:8081/actuator/health
+- tool-exporter
+	- http://localhost:8083/actuator/health
+
 ## ドキュメント
 
 ドキュメントは [こちら](./docs/README.md) 
