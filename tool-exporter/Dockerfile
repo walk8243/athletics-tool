@@ -10,6 +10,6 @@ RUN gradle build -xtest
 
 FROM openjdk:17.0
 
-COPY --from=builder /usr/src/app/build/libs/tool-exporter-0.0.1-SNAPSHOT.jar /usr/app.jar
+COPY --from=builder /usr/src/app/build/libs/tool-exporter.jar /usr/app.jar
 
 CMD ["java", "-jar", "/usr/app.jar"]
