@@ -7,7 +7,7 @@
 ### ローカル起動
 
 ```sh
-$ docker-compose up --build
+$ make up
 ```
 
 ### アプリケーションへのアクセス
@@ -37,6 +37,17 @@ $ docker-compose up --build
 	- user
 - password
 	- f85kt4HR
+
+### 開発中のデバッグ
+
+通常通りそれぞれのアプリケーションのディレクトリで起動。
+
+フロントエンド（Next.js）は [http://localhost:3000] で、
+その他のアプリケーションは [http://localhost:8080] でアクセス可能。
+
+#### VSCodeでのデバッグ
+
+VSCodeの場合は、それぞれのアプリケーション名からデバッガを起動が可能。
 
 ## ドキュメント
 

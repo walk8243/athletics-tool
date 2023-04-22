@@ -1,0 +1,64 @@
+{
+	// Use IntelliSense to learn about possible attributes.
+	// Hover to view descriptions of existing attributes.
+	// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "node",
+			"name": "tool-frontend",
+			"request": "launch",
+			"runtimeExecutable": "npm",
+			"runtimeArgs": [
+				"run-script",
+				"dev"
+			],
+			"skipFiles": [
+				"<node_internals>/**"
+			],
+			"cwd": "${workspaceFolder}/tool-frontend"
+		},
+		{
+			"type": "java",
+			"name": "tool-api",
+			"request": "launch",
+			"mainClass": "xyz.walk8243.athleticstool.toolapi.ToolApiApplication",
+			"projectName": "tool-api"
+		},
+		{
+			"type": "java",
+			"name": "repository-api",
+			"request": "launch",
+			"mainClass": "xyz.walk8243.athleticstool.repositoryapi.RepositoryApiApplication",
+			"projectName": "repository-api"
+		},
+		{
+			"type": "node",
+			"name": "web-frontend",
+			"request": "launch",
+			"runtimeExecutable": "npm",
+			"runtimeArgs": [
+				"run-script",
+				"dev"
+			],
+			"skipFiles": [
+				"<node_internals>/**"
+			],
+			"cwd": "${workspaceFolder}/web-frontend"
+		},
+		{
+			"type": "java",
+			"name": "web-api",
+			"request": "launch",
+			"mainClass": "xyz.walk8243.athleticstool.webapi.WebApiApplication",
+			"projectName": "web-api"
+		},
+		{
+			"type": "java",
+			"name": "tool-exporter",
+			"request": "launch",
+			"mainClass": "xyz.walk8243.athleticstool.toolexporter.ToolExporterApplication",
+			"projectName": "tool-exporter"
+		}
+	]
+}
