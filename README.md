@@ -42,8 +42,8 @@ $ make up
 
 通常通りそれぞれのアプリケーションのディレクトリで起動。
 
-フロントエンド（Next.js）は [http://localhost:3000] で、
-その他のアプリケーションは [http://localhost:8080] でアクセス可能。
+フロントエンド（Next.js）は http://localhost:3000 で、
+その他のアプリケーションは http://localhost:8080 でアクセス可能。
 
 #### VSCodeでのデバッグ
 
