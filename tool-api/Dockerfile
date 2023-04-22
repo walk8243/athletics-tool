@@ -1,11 +1,10 @@
 FROM gradle:8.1-jdk17 AS builder
 
 WORKDIR /usr/src/app
-COPY build.gradle .
-COPY settings.gradle .
+COPY build.gradle settings.gradle ./
 RUN gradle classes
 
-COPY src/ /usr/src/app/src/
+COPY src ./src
 RUN gradle build -xtest
 
 FROM openjdk:17.0
