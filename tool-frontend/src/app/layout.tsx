@@ -11,7 +11,12 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="ja">
+      <head>
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/favicon144.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/favicon72.png" />
+        <link rel='icon' href='/favicon36.png' />
+      </head>
       <body>{children}</body>
     </html>
   )
