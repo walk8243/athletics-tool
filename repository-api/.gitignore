@@ -35,3 +35,7 @@ out/
 
 ### VS Code ###
 .vscode/
+
+### default file ###
+application-default.yml
+application-default.yaml

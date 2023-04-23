@@ -15,15 +15,15 @@ $ make up
 - tool-frontend
 	- http://localhost:8000
 - tool-api
-	- http://localhost:8081/actuator/health
+	- http://localhost:8081/swagger-ui.html
 - repository-api
-	- http://localhost:8082/actuator/health
+	- http://localhost:8082/swagger-ui.html
 - web-frontend
 	- http://localhost:8001
 - web-api
-	- http://localhost:8090/actuator/health
+	- http://localhost:8090/swagger-ui.html
 - tool-exporter
-	- http://localhost:8083/actuator/health
+	- http://localhost:8083/swagger-ui.html
 
 ### DBへのアクセス
 
