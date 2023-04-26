@@ -11,12 +11,12 @@ import java.util.function.Function;
 
 import org.jooq.Field;
 import org.jooq.ForeignKey;
-import org.jooq.Function7;
+import org.jooq.Function8;
 import org.jooq.Identity;
 import org.jooq.Name;
 import org.jooq.Record;
 import org.jooq.Records;
-import org.jooq.Row7;
+import org.jooq.Row8;
 import org.jooq.Schema;
 import org.jooq.SelectField;
 import org.jooq.Table;
@@ -82,6 +82,11 @@ public class PlayerHistory extends TableImpl<PlayerHistoryRecord> {
      * The column <code>athletics-tool.player_history.kana</code>.
      */
     public final TableField<PlayerHistoryRecord, String> KANA = createField(DSL.name("kana"), SQLDataType.VARCHAR(255).defaultValue(DSL.field("NULL", SQLDataType.VARCHAR)), this, "");
+
+    /**
+     * The column <code>athletics-tool.player_history.year</code>.
+     */
+    public final TableField<PlayerHistoryRecord, Integer> YEAR = createField(DSL.name("year"), SQLDataType.INTEGER.nullable(false), this, "");
 
     /**
      * The column <code>athletics-tool.player_history.created_at</code>.
@@ -213,18 +218,18 @@ public class PlayerHistory extends TableImpl<PlayerHistoryRecord> {
     }
 
     // -------------------------------------------------------------------------
-    // Row7 type methods
+    // Row8 type methods
     // -------------------------------------------------------------------------
 
     @Override
-    public Row7<Integer, Integer, Integer, Integer, String, String, LocalDateTime> fieldsRow() {
-        return (Row7) super.fieldsRow();
+    public Row8<Integer, Integer, Integer, Integer, String, String, Integer, LocalDateTime> fieldsRow() {
+        return (Row8) super.fieldsRow();
     }
 
     /**
      * Convenience mapping calling {@link SelectField#convertFrom(Function)}.
      */
-    public <U> SelectField<U> mapping(Function7<? super Integer, ? super Integer, ? super Integer, ? super Integer, ? super String, ? super String, ? super LocalDateTime, ? extends U> from) {
+    public <U> SelectField<U> mapping(Function8<? super Integer, ? super Integer, ? super Integer, ? super Integer, ? super String, ? super String, ? super Integer, ? super LocalDateTime, ? extends U> from) {
         return convertFrom(Records.mapping(from));
     }
 
@@ -232,7 +237,7 @@ public class PlayerHistory extends TableImpl<PlayerHistoryRecord> {
      * Convenience mapping calling {@link SelectField#convertFrom(Class,
      * Function)}.
      */
-    public <U> SelectField<U> mapping(Class<U> toType, Function7<? super Integer, ? super Integer, ? super Integer, ? super Integer, ? super String, ? super String, ? super LocalDateTime, ? extends U> from) {
+    public <U> SelectField<U> mapping(Class<U> toType, Function8<? super Integer, ? super Integer, ? super Integer, ? super Integer, ? super String, ? super String, ? super Integer, ? super LocalDateTime, ? extends U> from) {
         return convertFrom(toType, Records.mapping(from));
     }
 }

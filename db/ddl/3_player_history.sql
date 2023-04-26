@@ -1,17 +1,3 @@
-CREATE TABLE `player` (
-	`id` int(11) AUTO_INCREMENT PRIMARY KEY,
-	`created_at` datetime DEFAULT CURRENT_TIMESTAMP,
-	`updated_at` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-);
-
-CREATE TABLE `player_belong` (
-	`id` int(11) AUTO_INCREMENT PRIMARY KEY,
-	`name` varchar(255) NOT NULL,
-	`delete_flag` boolean NOT NULL DEFAULT 0,
-	`created_at` datetime DEFAULT CURRENT_TIMESTAMP,
-	`updated_at` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-);
-
 CREATE TABLE `player_history` (
 	`id` int(11) AUTO_INCREMENT PRIMARY KEY,
 	`player_id` int(11) NOT NULL,
@@ -19,6 +5,7 @@ CREATE TABLE `player_history` (
 	`belong_id` int(11) DEFAULT NULL,
 	`name` varchar(255) NOT NULL,
 	`kana` varchar(255) DEFAULT NULL,
+	`year` int(11) NOT NULL,
 	`created_at` datetime DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT `player_history_uk` UNIQUE KEY (`player_id`, `history`),
 	CONSTRAINT `player_history_player_fk` FOREIGN KEY (`player_id`) REFERENCES `player` (`id`) ON DELETE CASCADE,
