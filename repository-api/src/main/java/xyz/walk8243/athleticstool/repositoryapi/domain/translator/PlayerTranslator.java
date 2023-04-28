@@ -18,25 +18,28 @@ import xyz.walk8243.athleticstool.repositoryapi.infrastructure.database.entity.t
 
 @Component
 public class PlayerTranslator {
+
+	public PlayerResponse translate(@NonNull PlayerFullRecord fullRecord) {
+		return new PlayerResponse(fullRecord.playerRecord().getId(), fullRecord.historyRecord().getName(), fullRecord.historyRecord().getKana(), translatePlayerBelong(fullRecord.belongRecord()));
+	}
 	
 	public PlayerListResponse translate(@NonNull Map<PlayerRecord, List<PlayerFullRecord>> resultMap) {
 		return new PlayerListResponse(
-			resultMap.entrySet().stream()
-				.map(entry -> translatePlayer(entry.getKey(), entry.getValue()))
+			resultMap.values().stream()
+				.map(result -> translatePlayer(result))
 				.filter(Optional::isPresent)
 				.map(Optional::get)
 				.toList()
 		);
 	}
 
-	private Optional<PlayerResponse> translatePlayer(@Nonnull PlayerRecord player, @Nonnull List<PlayerFullRecord> fullRecords) {
+	private Optional<PlayerResponse> translatePlayer(@Nonnull List<PlayerFullRecord> fullRecords) {
 		final Optional<PlayerFullRecord> fullRecordOptional = fullRecords.stream().findFirst();
 		if (fullRecordOptional.isEmpty()) {
 			return Optional.empty();
 		}
 
-		return fullRecordOptional
-			.map(fullRecord -> new PlayerResponse(player.getId(), fullRecord.historyRecord().getName(), fullRecord.historyRecord().getKana(), translatePlayerBelong(fullRecord.belongRecord())));
+		return fullRecordOptional.map(this::translate);
 	}
 
 	private Optional<PlayerBelong> translatePlayerBelong(@Nonnull PlayerBelongRecord playerBelongRecord) {
