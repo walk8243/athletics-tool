@@ -2,7 +2,7 @@
 
 up:
 	@$(MAKE) -C entity build --no-print-directory
-	docker-compose up --build
+	docker-compose up --build -d
 
 down:
 	docker-compose down

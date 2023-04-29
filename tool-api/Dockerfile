@@ -1,7 +1,10 @@
+FROM walk8243/athletics-tool-entity AS entity
+
 FROM gradle:8.1-jdk17 AS builder
 
 WORKDIR /usr/src/app
 COPY build.gradle settings.gradle ./
+COPY --from=entity /usr/src/entity/build/libs/entity.jar /usr/src/app/libs/
 RUN gradle classes
 
 COPY src ./src

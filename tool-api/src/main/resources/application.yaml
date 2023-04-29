@@ -1,3 +1,18 @@
-springdoc:
-  swagger-ui:
-    path: /swagger-ui.html
+spring:
+  application:
+    name: athletics-tool-tool-api
+  mvc:
+    throw-exception-if-no-handler-found: true
+    log-resolved-exception: false
+  resources:
+    add-mappings: false
+  lifecycle:
+    timeout-per-shutdown-phase: 30s
+
+app:
+  rest:
+    repository-api:
+      schema: http
+      hostname: repository-api
+      port: "8080"
+      base-path: /athletics

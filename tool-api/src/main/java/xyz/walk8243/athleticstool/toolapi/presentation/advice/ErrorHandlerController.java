@@ -1,4 +1,4 @@
-package xyz.walk8243.athleticstool.repositoryapi.presentation.advice;
+package xyz.walk8243.athleticstool.toolapi.presentation.advice;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
