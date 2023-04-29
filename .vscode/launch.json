@@ -35,11 +35,7 @@
 			"mainClass": "xyz.walk8243.athleticstool.repositoryapi.RepositoryApiApplication",
 			"projectName": "repository-api",
 			"env": {
-				"DB_HOSTNAME": "localhost",
-				"DB_PORT": "3307",
-				"DB_SCHEMA": "athletics-tool",
-				"DB_USER": "user",
-				"DB_PASSWORD": "f85kt4HR"
+				"SPRING_PROFILES_ACTIVE": "local"
 			}
 		},
 		{

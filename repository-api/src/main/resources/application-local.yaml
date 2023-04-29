@@ -1,0 +1,5 @@
+spring:
+  datasource:
+    url: jdbc:mariadb://localhost:3307/athletics-tool
+    username: user
+    password: f85kt4HR
