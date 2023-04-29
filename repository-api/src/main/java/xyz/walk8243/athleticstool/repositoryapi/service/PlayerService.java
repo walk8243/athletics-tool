@@ -8,10 +8,10 @@ import org.springframework.stereotype.Service;
 
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
-import xyz.walk8243.athleticstool.repositoryapi.domain.exception.NoDataException;
+import xyz.walk8243.athleticstool.entity.domain.exception.NoDataException;
+import xyz.walk8243.athleticstool.entity.domain.response.PlayerListResponse;
+import xyz.walk8243.athleticstool.entity.domain.response.PlayerResponse;
 import xyz.walk8243.athleticstool.repositoryapi.domain.record.PlayerFullRecord;
-import xyz.walk8243.athleticstool.repositoryapi.domain.response.PlayerListResponse;
-import xyz.walk8243.athleticstool.repositoryapi.domain.response.PlayerResponse;
 import xyz.walk8243.athleticstool.repositoryapi.domain.translator.PlayerTranslator;
 import xyz.walk8243.athleticstool.repositoryapi.infrastructure.database.entity.tables.records.PlayerRecord;
 import xyz.walk8243.athleticstool.repositoryapi.infrastructure.database.repository.PlayerRepository;

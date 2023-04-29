@@ -32,6 +32,7 @@
 			"mainClass": "xyz.walk8243.athleticstool.repositoryapi.RepositoryApiApplication",
 			"projectName": "repository-api",
 			"env": {
+				"DB_USER": "user",
 				"DB_PASSWORD": "f85kt4HR"
 			}
 		},

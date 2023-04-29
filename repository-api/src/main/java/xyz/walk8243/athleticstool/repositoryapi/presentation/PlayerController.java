@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import lombok.RequiredArgsConstructor;
-import xyz.walk8243.athleticstool.repositoryapi.domain.response.PlayerListResponse;
-import xyz.walk8243.athleticstool.repositoryapi.domain.response.PlayerResponse;
+import xyz.walk8243.athleticstool.entity.domain.response.PlayerListResponse;
+import xyz.walk8243.athleticstool.entity.domain.response.PlayerResponse;
 import xyz.walk8243.athleticstool.repositoryapi.service.PlayerService;
 
 @RestController

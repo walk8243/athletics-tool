@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import lombok.extern.slf4j.Slf4j;
-import xyz.walk8243.athleticstool.repositoryapi.domain.exception.NoDataException;
+import xyz.walk8243.athleticstool.entity.domain.exception.NoDataException;
 
 @Slf4j
 @RestControllerAdvice
