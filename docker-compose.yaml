@@ -6,6 +6,8 @@ services:
     restart: always
     ports:
       - "3307:3306"
+    networks:
+      - database
     environment:
       MARIADB_ROOT_PASSWORD: 8uqASU2q36dP
       MARIADB_DATABASE: athletics-tool
@@ -17,7 +19,13 @@ services:
     restart: always
     ports:
       - "8082:8080"
+    networks:
+      - database
+      - repository
     environment:
+      DB_HOSTNAME: db
+      DB_PORT: "3306"
+      DB_SCHEMA: athletics-tool
       DB_USER: user
       DB_PASSWORD: f85kt4HR
   tool-api:
@@ -26,27 +34,46 @@ services:
     restart: always
     ports:
       - "8081:8080"
+    networks:
+      - repository
+      - tool
   tool-frontend:
     container_name: athletics-tool.tool-frontend
     build: ./tool-frontend
     restart: always
     ports:
       - "8000:3000"
+    networks:
+      - tool
   web-api:
     container_name: athletics-tool.web-api
     build: ./web-api
     restart: always
     ports:
       - "8090:8080"
+    networks:
+      - repository
+      - web
   web-frontend:
     container_name: athletics-tool.web-frontend
     build: ./web-frontend
     restart: always
     ports:
       - "8001:3000"
+    networks:
+      - web
   tool-exporter:
     container_name: athletics-tool.tool-exporter
     build: ./tool-exporter
     restart: always
     ports:
       - "8083:8080"
+    networks:
+      - repository
+      - tool
+
+networks:
+  database:
+  repository:
+  tool:
+  web:
