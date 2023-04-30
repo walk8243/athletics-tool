@@ -23,7 +23,10 @@
 			"name": "tool-api",
 			"request": "launch",
 			"mainClass": "xyz.walk8243.athleticstool.toolapi.ToolApiApplication",
-			"projectName": "tool-api"
+			"projectName": "tool-api",
+			"env": {
+				"SPRING_PROFILES_ACTIVE": "local"
+			}
 		},
 		{
 			"type": "java",
@@ -32,7 +35,7 @@
 			"mainClass": "xyz.walk8243.athleticstool.repositoryapi.RepositoryApiApplication",
 			"projectName": "repository-api",
 			"env": {
-				"DB_PASSWORD": "f85kt4HR"
+				"SPRING_PROFILES_ACTIVE": "local"
 			}
 		},
 		{

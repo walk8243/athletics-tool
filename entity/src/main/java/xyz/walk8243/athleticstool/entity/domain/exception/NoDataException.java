@@ -1,4 +1,4 @@
-package xyz.walk8243.athleticstool.repositoryapi.domain.exception;
+package xyz.walk8243.athleticstool.entity.domain.exception;
 
 import java.util.NoSuchElementException;
 

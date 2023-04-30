@@ -1,4 +1,4 @@
-package xyz.walk8243.athleticstool.repositoryapi.domain.response;
+package xyz.walk8243.athleticstool.entity.domain.response;
 
 import java.util.Optional;
 

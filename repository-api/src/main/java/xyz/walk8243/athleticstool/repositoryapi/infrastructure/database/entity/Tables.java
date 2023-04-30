@@ -3,30 +3,20 @@
  */
 package xyz.walk8243.athleticstool.repositoryapi.infrastructure.database.entity;
 
-
 import xyz.walk8243.athleticstool.repositoryapi.infrastructure.database.entity.tables.Player;
 import xyz.walk8243.athleticstool.repositoryapi.infrastructure.database.entity.tables.PlayerBelong;
 import xyz.walk8243.athleticstool.repositoryapi.infrastructure.database.entity.tables.PlayerHistory;
 
-
-/**
- * Convenience access to all tables in athletics-tool.
- */
-@SuppressWarnings({ "all", "unchecked", "rawtypes" })
+/** Convenience access to all tables in athletics-tool. */
+@SuppressWarnings({"all", "unchecked", "rawtypes"})
 public class Tables {
 
-    /**
-     * The table <code>athletics-tool.player</code>.
-     */
-    public static final Player PLAYER = Player.PLAYER;
+	/** The table <code>athletics-tool.player</code>. */
+	public static final Player PLAYER = Player.PLAYER;
 
-    /**
-     * The table <code>athletics-tool.player_belong</code>.
-     */
-    public static final PlayerBelong PLAYER_BELONG = PlayerBelong.PLAYER_BELONG;
+	/** The table <code>athletics-tool.player_belong</code>. */
+	public static final PlayerBelong PLAYER_BELONG = PlayerBelong.PLAYER_BELONG;
 
-    /**
-     * The table <code>athletics-tool.player_history</code>.
-     */
-    public static final PlayerHistory PLAYER_HISTORY = PlayerHistory.PLAYER_HISTORY;
+	/** The table <code>athletics-tool.player_history</code>. */
+	public static final PlayerHistory PLAYER_HISTORY = PlayerHistory.PLAYER_HISTORY;
 }

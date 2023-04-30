@@ -1,10 +1,18 @@
 spring:
-  datasource:
-    url: jdbc:mariadb://localhost:3307/athletics-tool
-    driver-class-name: org.mariadb.jdbc.Driver
-    username: user
-    password: ${DB_PASSWORD}
+  application:
+    name: athletics-tool-repository-api
   mvc:
     throw-exception-if-no-handler-found: true
+    log-resolved-exception: false
   resources:
     add-mappings: false
+  lifecycle:
+    timeout-per-shutdown-phase: 30s
+
+  datasource:
+    url: jdbc:mariadb://${DB_HOSTNAME}:${DB_PORT}/${DB_SCHEMA}
+    driver-class-name: org.mariadb.jdbc.Driver
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+  jooq:
+    sql-dialect: MARIADB
