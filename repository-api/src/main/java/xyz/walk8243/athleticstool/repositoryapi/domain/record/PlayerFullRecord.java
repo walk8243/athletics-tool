@@ -6,7 +6,6 @@ import xyz.walk8243.athleticstool.repositoryapi.infrastructure.database.entity.t
 import xyz.walk8243.athleticstool.repositoryapi.infrastructure.database.entity.tables.records.PlayerRecord;
 
 public record PlayerFullRecord(
-	@Nonnull PlayerRecord playerRecord,
-	@Nonnull PlayerHistoryRecord historyRecord,
-	@Nonnull PlayerBelongRecord belongRecord
-) {}
+		@Nonnull PlayerRecord playerRecord,
+		@Nonnull PlayerHistoryRecord historyRecord,
+		@Nonnull PlayerBelongRecord belongRecord) {}
