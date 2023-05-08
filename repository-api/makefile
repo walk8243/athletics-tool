@@ -12,10 +12,10 @@ jooq:
 	@java -cp "./script/jooq/jar/*" org.jooq.codegen.GenerationTool ./script/jooq/config.xml
 
 check:
-	@gradlew check
+	@./gradlew check
 
 fix:
-	@gradlew spotlessApply
+	@./gradlew spotlessApply
 
 eclipse:
-	@gradlew cleanEclipse eclipse --quiet
+	@./gradlew cleanEclipse eclipse --quiet

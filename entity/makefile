@@ -5,7 +5,7 @@ build:
 
 reload:
 	@$(MAKE) jar --no-print-directory
-	@gradlew cleanEclipse eclipse --quiet
+	@./gradlew cleanEclipse eclipse --quiet
 
 jar:
-	@gradlew build -xtest
+	@./gradlew build -xtest
