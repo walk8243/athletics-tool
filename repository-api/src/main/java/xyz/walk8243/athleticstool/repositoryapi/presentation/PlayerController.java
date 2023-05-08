@@ -30,4 +30,12 @@ public class PlayerController {
 	public PlayerListResponse list() {
 		return service.list();
 	}
+
+	@GetMapping("/belong/{belongId}")
+	@Operation(summary = "選手一覧API", description = "全ての選手情報を取得する")
+	public PlayerListResponse belong(
+			@PathVariable(name = "belongId") @Parameter(name = "belongId", example = "1")
+					Integer belongId) {
+		return service.belong(belongId);
+	}
 }

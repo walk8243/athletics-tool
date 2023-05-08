@@ -3,3 +3,8 @@ spring:
     url: jdbc:mariadb://localhost:3307/athletics-tool
     username: user
     password: f85kt4HR
+
+logging:
+  level:
+    xyz.walk8243.athleticstool: DEBUG
+    org.joog: DEBUG

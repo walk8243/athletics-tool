@@ -1,6 +1,5 @@
 package xyz.walk8243.athleticstool.repositoryapi.service;
 
-import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import lombok.NonNull;
@@ -30,7 +29,13 @@ public class PlayerService {
 	}
 
 	public PlayerListResponse list() {
-		final Map<PlayerRecord, List<PlayerFullRecord>> resultMap = repository.list();
+		final Map<PlayerRecord, PlayerFullRecord> resultMap = repository.list();
+
+		return translator.translate(resultMap);
+	}
+
+	public PlayerListResponse belong(@NonNull Integer belongId) {
+		final Map<PlayerRecord, PlayerFullRecord> resultMap = repository.belong(belongId);
 
 		return translator.translate(resultMap);
 	}

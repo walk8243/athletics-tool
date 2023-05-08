@@ -1,7 +1,6 @@
 package xyz.walk8243.athleticstool.repositoryapi.domain.translator;
 
 import jakarta.annotation.Nonnull;
-import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -25,23 +24,8 @@ public class PlayerTranslator {
 				translatePlayerBelong(fullRecord.belongRecord()));
 	}
 
-	public PlayerListResponse translate(
-			@NonNull Map<PlayerRecord, List<PlayerFullRecord>> resultMap) {
-		return new PlayerListResponse(
-				resultMap.values().stream()
-						.map(result -> translatePlayer(result))
-						.filter(Optional::isPresent)
-						.map(Optional::get)
-						.toList());
-	}
-
-	private Optional<PlayerResponse> translatePlayer(@Nonnull List<PlayerFullRecord> fullRecords) {
-		final Optional<PlayerFullRecord> fullRecordOptional = fullRecords.stream().findFirst();
-		if (fullRecordOptional.isEmpty()) {
-			return Optional.empty();
-		}
-
-		return fullRecordOptional.map(this::translate);
+	public PlayerListResponse translate(@NonNull Map<PlayerRecord, PlayerFullRecord> resultMap) {
+		return new PlayerListResponse(resultMap.values().stream().map(this::translate).toList());
 	}
 
 	private Optional<PlayerBelong> translatePlayerBelong(
