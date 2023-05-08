@@ -46,8 +46,7 @@ public class PlayerTranslator {
 
 	private Optional<PlayerBelong> translatePlayerBelong(
 			@Nonnull PlayerBelongRecord playerBelongRecord) {
-		if (Objects.isNull(playerBelongRecord.getId())
-				|| playerBelongRecord.getDeleteFlag().equals(Byte.valueOf("1"))) {
+		if (Objects.isNull(playerBelongRecord.getId())) {
 			return Optional.empty();
 		}
 

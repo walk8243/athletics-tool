@@ -6,6 +6,7 @@ import java.util.Optional;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.jooq.DSLContext;
+import org.jooq.impl.SQLDataType;
 import org.springframework.stereotype.Repository;
 import xyz.walk8243.athleticstool.repositoryapi.domain.record.PlayerFullRecord;
 import xyz.walk8243.athleticstool.repositoryapi.infrastructure.database.entity.Keys;
@@ -18,6 +19,7 @@ import xyz.walk8243.athleticstool.repositoryapi.infrastructure.database.entity.t
 @RequiredArgsConstructor
 public class PlayerRepository {
 	private final DSLContext dslContext;
+	private static final Byte SQL_FALSE_VALUE = SQLDataType.TINYINT.convert(Boolean.FALSE);
 
 	public Optional<PlayerFullRecord> get(@NonNull Integer playerId) {
 		return dslContext
@@ -27,6 +29,7 @@ public class PlayerRepository {
 				.onKey(Keys.PLAYER_HISTORY_PLAYER_FK)
 				.leftJoin(PlayerBelong.PLAYER_BELONG)
 				.onKey(Keys.PLAYER_BELONG_FK)
+				.and(PlayerBelong.PLAYER_BELONG.DELETE_FLAG.eq(SQL_FALSE_VALUE))
 				.where(Player.PLAYER.ID.eq(playerId))
 				.orderBy(PlayerHistory.PLAYER_HISTORY.HISTORY.desc())
 				.limit(1)
@@ -46,6 +49,7 @@ public class PlayerRepository {
 				.onKey(Keys.PLAYER_HISTORY_PLAYER_FK)
 				.leftJoin(PlayerBelong.PLAYER_BELONG)
 				.onKey(Keys.PLAYER_BELONG_FK)
+				.and(PlayerBelong.PLAYER_BELONG.DELETE_FLAG.eq(SQL_FALSE_VALUE))
 				.orderBy(Player.PLAYER.ID, PlayerHistory.PLAYER_HISTORY.HISTORY.desc())
 				.fetchGroups(
 						record -> record.into(Player.PLAYER),

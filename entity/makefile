@@ -1,4 +1,4 @@
-.PHONY: build reload jar
+.PHONY: build reload jar check fix
 
 build: 
 	@docker build -t walk8243/athletics-tool-entity .
@@ -9,3 +9,9 @@ reload:
 
 jar:
 	@./gradlew build -xtest
+
+check:
+	@./gradlew check
+
+fix:
+	@./gradlew spotlessApply
