@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: athletics-tool-web-api
+  mvc:
+    throw-exception-if-no-handler-found: true
+    log-resolved-exception: false
+  resources:
+    add-mappings: false
+  lifecycle:
+    timeout-per-shutdown-phase: 30s
+
+app:
+  rest:
+    repository-api:
+      schema: http
+      hostname: repository-api
+      port: "8080"
+      base-path: /athletics

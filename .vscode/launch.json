@@ -57,7 +57,10 @@
 			"name": "web-api",
 			"request": "launch",
 			"mainClass": "xyz.walk8243.athleticstool.webapi.WebApiApplication",
-			"projectName": "web-api"
+			"projectName": "web-api",
+			"env": {
+				"SPRING_PROFILES_ACTIVE": "local"
+			}
 		},
 		{
 			"type": "java",
