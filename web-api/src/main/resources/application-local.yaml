@@ -5,3 +5,7 @@ app:
       hostname: localhost
       port: "8082"
       base-path: /athletics
+
+logging:
+  level:
+    xyz.walk8243.athleticstool: DEBUG
