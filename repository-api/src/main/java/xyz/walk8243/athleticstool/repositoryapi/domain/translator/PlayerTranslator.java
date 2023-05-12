@@ -21,6 +21,8 @@ public class PlayerTranslator {
 				fullRecord.playerRecord().getId(),
 				fullRecord.historyRecord().getName(),
 				fullRecord.historyRecord().getKana(),
+				PlayerResponse.Prefecture.valueOf(fullRecord.historyRecord().getPrefecture().name()),
+				PlayerResponse.Category.valueOf(fullRecord.historyRecord().getCategory().name()),
 				translatePlayerBelong(fullRecord.belongRecord()));
 	}
 
