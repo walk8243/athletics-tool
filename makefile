@@ -1,7 +1,7 @@
 .PHONY: up down reload
 
 up:
-	@$(MAKE) -C entity build --no-print-directory
+	@$(MAKE) -C entity docker --no-print-directory
 	docker-compose up --build -d
 
 down:

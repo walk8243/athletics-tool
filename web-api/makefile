@@ -5,10 +5,10 @@ reload:
 	@$(MAKE) eclipse --no-print-directory
 
 check:
-	@./gradlew check
+	@gradlew check
 
 fix:
-	@./gradlew spotlessApply
+	@gradlew spotlessApply
 
 eclipse:
-	@./gradlew cleanEclipse eclipse --quiet
+	@gradlew cleanEclipse eclipse --quiet
