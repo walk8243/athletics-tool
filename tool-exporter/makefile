@@ -1,14 +1,19 @@
 .PHONY: reload check fix
 
+GRADLE = ./gradlew
+ifeq ($(OS),Windows_NT)
+	GRADLE = gradlew.bat
+endif
+
 reload:
 	@$(MAKE) -C ../entity reload --no-print-directory
 	@$(MAKE) eclipse --no-print-directory
 
 check:
-	@gradlew check
+	@$(GRADLE) check
 
 fix:
-	@gradlew spotlessApply
+	@$(GRADLE) spotlessApply
 
 eclipse:
-	@gradlew cleanEclipse eclipse --quiet
+	@$(GRADLE) cleanEclipse eclipse --quiet

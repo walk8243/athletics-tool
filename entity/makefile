@@ -1,19 +1,24 @@
 .PHONY: build reload jar check fix docker
 
+GRADLE = ./gradlew
+ifeq ($(OS),Windows_NT)
+	GRADLE = gradlew.bat
+endif
+
 build: fix jar
 
 reload:
 	@$(MAKE) jar --no-print-directory
-	@gradlew cleanEclipse eclipse --quiet
+	@$(GRADLE) cleanEclipse eclipse --quiet
 
 jar:
-	@gradlew build -xtest
+	@$(GRADLE) build -xtest
 
 check:
-	@gradlew check
+	@$(GRADLE) check
 
 fix:
-	@gradlew spotlessApply
+	@$(GRADLE) spotlessApply
 
 docker:
 	@docker build -t walk8243/athletics-tool-entity .
